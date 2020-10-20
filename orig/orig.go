@@ -25,9 +25,9 @@ func main() {
 
 	log.Println("Sending messages")
 	for i := 1; i <= 3; i++ {
-		publishMessage(ch, "my.i", []byte(strconv.Itoa(i)))
+		publishMessage(ch, "my.o", []byte("MSG_"+strconv.Itoa(i)))
 		log.Printf("Sent out: %d", i)
-		time.Sleep(1 * time.Second)
+		time.Sleep(3 * time.Second)
 	}
 }
 

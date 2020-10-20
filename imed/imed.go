@@ -20,15 +20,16 @@ func main() {
 
 	declareExhange(ch)
 	q := declareQueue(ch)
-	bindQueue(ch, q, "my.i")
+	bindQueue(ch, q, "my.o")
 	msgs := consumeChannel(err, ch, q)
 
 	forever := make(chan bool)
 
 	go func() {
 		for d := range msgs {
+			time.Sleep(1*time.Second)
 			msg := append([]byte("Got "), d.Body[:]...)
-			publishMessage(ch, "my.o", msg)
+			publishMessage(ch, "my.i", msg)
 			log.Printf("Published: %s", msg)
 		}
 	}()
