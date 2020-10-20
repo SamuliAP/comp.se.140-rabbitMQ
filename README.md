@@ -4,3 +4,5 @@ Topic based communication systems make distributing messages to receivers simple
 
 ### Your main learnings
 Basic concepts regarding AMQP systems (message queues, exhange types). I also learned how to utilize docker build context with docker-compose.
+
+Note: the orig service will wait for 10 seconds before sending messages
