@@ -11,8 +11,6 @@ import (
 
 func main() {
 
-	time.Sleep(10*time.Second)
-
 	conn, err := getConnection()
 	onError(err, "Connection refused")
 	defer conn.Close()
